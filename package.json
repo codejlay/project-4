@@ -1,0 +1,24 @@
+{
+  "name": "project-04-jlay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codejlay/project-3.git"
+  },
+  "author": "JLay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codejlay/project-3/issues"
+  },
+  "homepage": "https://github.com/codejlay/project-3#readme"
+}
