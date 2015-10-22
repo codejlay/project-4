@@ -1,7 +1,7 @@
 {
   "name": "project-04-jlay",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mars Colony Hybrid App",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-autoprefixer": "^3.0.2",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codejlay/project-3.git"
+    "url": "git+https://github.com/codejlay/project-4.git"
   },
   "author": "JLay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codejlay/project-3/issues"
+    "url": "https://github.com/codejlay/project-4/issues"
   },
-  "homepage": "https://github.com/codejlay/project-3#readme"
+  "homepage": "https://github.com/codejlay/project-4#readme"
 }
