@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 	<head>
 		<meta charset="utf-8">
 		<title>Mars Colony Hybrid App - Who are you?</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	</head>
 
-	<body>
-		<header>
-		</header>
-
+	<body ng-controller="RegisterFormCtrl" class="who">
 		<div class="wrapper-main-who">		
+			
 			<div class="who">
 				<h1>Who are you?</h1>
+			
+				<form novalidate name="myForm" ng-submit="expression" ng-class="{ 'show-validation': showValidation }">
+					<div class="form-list">
+						<input type="text" name="name" id="name" placeholder="Name" ng-model="user.first" ng-minlength="2" ng-maxlength="140" required/> </br>
+
+						<input type="number" name="age" id="age" placeholder="Age" ng-model="user.age" min="1" max="200" required/> </br>
+
+						<select name="occupation" id="occupation" ng-model="data.singleSelect" required>
+						  <option value="" disabled="disabled" selected="selected">Select occupation</option>
+						  <option value="janitor">Janitor</option>
+						  <option value="alien">Alien Hunter</option>
+						  <option value="dust">Dust Farmer</option>
+						  <option value="battery">Battery technician</option>
+						  <option value="yoga">Yoga teacher</option>
+						</select>
+					</div>
+				</form>
 			</div>
-
-			<div class="form-list">
-				<input type="text" name="name" id="name" placeholder="Name"/> </br>
-
-				<input type="number" name="age" id="age" placeholder="Age"/> </br>
-				<select name="occupation" id="occupation">
-				  <option value="select">Select occupation</option>
-				  <option value="janitor">Janitor</option>
-				  <option value="alien">Alien Hunter</option>
-				  <option value="dust">Dust Farmer</option>
-				  <option value="battery">Battery technician</option>
-				  <option value="yoga">Yoga teacher</option>
-				</select>
-			</div>
-
+				
 			<div class="check-in-button">
-				<button>Check in</button>
+				<a href="recent.html"><input type="submit" id="submit" value="Check in" ng-disabled="myForm.$invalid"/></a>
 			</div>	
 		</div>
 		
-		<footer>
-		</footer>
-
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> 
 		<script src="js/script.js"></script>

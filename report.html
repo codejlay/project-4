@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 	<head>
 		<meta charset="utf-8">
 		<title>Mars Colony Hybrid App - Report Encounter</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	</head>
 
-	<body>
-		<header>
-		</header>
+	<body ng-controller="ReportFormCtrl" class="report-all">
+	
+		<form novalidate name="myForm" ng-submit="expression">
+			<div class="wrapper-main-report">
+				<div class="report">
+					<h1>Report Encounter</h1>
+					<p>Safety on Mars is your responsibility</p>
+				</div>
+
+				<div class="report-list">
+					<select name="alien-type" id="alien-type" ng-model="data.singleSelect" required>
+					  <option value="" disabled="disabled" selected="selected">Select alien type</option>
+					  <option value="lizard">Lizard Man</option>
+					  <option value="slug">Giant Slug</option>
+					  <option value="android">Rogue Android</option>
+					  <option value="octospider">Octospider</option>
+					  <option value="spiderpus">Spiderpus</option>
+					</select>
+				
+					<div class="text-area">
+						<textarea name="textarea" rows="10" cols="50">Action taken</textarea>
+					</div>		
+				</div>
+
+						
+				<div class="submit-button">
+					<button>Submit Report</button>
+				</div>	
+			</div>
+		</form>
+
 		
-		<div class="wrapper-main-report">
-			<div class="report">
-				<h1>Report Encounter</h1>
-				<h2>Safety on Mars is your responsibility</h2>
-			</div>
-
-			<div class="report-list">
-				<select name="alien-type" id="alien-type">
-				  <option value="select">Select alien type</option>
-				  <option value="lizard">Lizard Man</option>
-				  <option value="slug">Giant Slug</option>
-				  <option value="android">Rogue Android</option>
-				  <option value="octospider">Octospider</option>
-				  <option value="spiderpus">Spiderpus</option>
-				</select>
-			
-				<div class="text-area">
-					<textarea name="textarea" rows="10" cols="50">Action taken</textarea>
-				</div>		
-			</div>
-					
-			<div class="submit-button">
-				<button>Submit Report</button>
-			</div>	
-		</div>
-
-		<footer>
-		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> 

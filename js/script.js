@@ -1,11 +1,12 @@
 
 
-angular.module('myFormApp', []) 
+angular.module('myApp', []) 
   // .run(['$rootScope', function($rootScope){
-
 
   // }])
   .controller('RegisterFormCtrl', ['$scope', function($scope){
+
+  // $scope.showValidation = false;
 
       $scope.submitRegistration = function(e, form) {
         e.preventDefault();
@@ -22,3 +23,13 @@ angular.module('myFormApp', [])
 
       }
 }]);
+
+   //  $scope.enter = function(e) {
+   //    e.preventDefault(); 
+
+    //  if ($scope.myForm.$invalid) {
+   //    $scope.showValidation = true;
+
+   //    }
+
+   // } 
