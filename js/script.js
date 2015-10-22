@@ -1,10 +1,53 @@
 (function(){
 
-angular.module('myApp', []) 
+angular.module('myApp', ['ui.router']) 
+
+.config(['$stateProvider', 
+          '$urlRouterProvider',
+          '$locationProvider',
+          function($stateProvider, 
+                    $urlRouterProvider,
+                    $locationProvider){
+
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false,
+                rewriteLinks: false
+            });
+
+            $stateProvider
+                .state('welcome', {
+                    url:'/',
+                    templateUrl: 'start.html'
+                })
+                .state('register', {
+                    url:'/register',
+                    templateUrl: 'who.html',
+                    controller: 'RegisterFormCtrl'
+                })
+                .state('encounters', {
+                    url:'/encounters',
+                    templateUrl: 'recent.html',
+                })
+                .state('reports', {
+                    url:'/reports',
+                    templateUrl: 'report.html'
+                })
+
+                // .state('page3', {
+                //     url:'/page3',
+                //     templateUrl: 'recent.html'
+                // }).state('page4', {
+                //     url:'/g',
+                //     templateUrl: 'report.html'
+                // })
+
+
+}])
   // .run(['$rootScope', function($rootScope){
 
   // }])
-  .controller('RegisterFormCtrl', ['$scope', function($scope){
+  .controller('RegisterFormCtrl', ['$scope', '$state', function($scope, $state){
 
   $scope.showValidation = false;
 
@@ -13,9 +56,10 @@ angular.module('myApp', [])
 
      if ($scope.myForm.$invalid) {
       $scope.showValidation = true;
-      alert('hola');
+    } else {
 
-      }
+      $state.go('encounters');
+    }
 
       // $scope.submitRegistration = function(e, form) {
       //   e.preventDefault();
@@ -30,6 +74,8 @@ angular.module('myApp', [])
     //   $scope.submitReport = function(e, form) {
     //     e.preventDefault();
     //     console.log(form);
+
+
 
     //   }
 

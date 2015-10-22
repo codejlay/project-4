@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
-	<head>
-		<meta charset="utf-8">
-		<title>Mars Colony Hybrid App - Recent Encounters</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	</head>
 
-	<body class="recent-all">
-		
 		<div class="wrapper-main-recent">
 			<div class="recent">
 				<h1>Recent Encounters</h1>
@@ -31,20 +21,11 @@
 				<p>Tuesday, Oct 20 - Lizard</p> 
 				<p>Smoked it</p>
 			</div>
-			
-					
-				<div class="report-section">
-					<a href="report.html">
-						<button>Report Encounter</button>
-					</a>
-				</div>
-				
+								
+			<div class="report-section">
+				<a ui-sref="reports">
+					<button>Report Encounter</button>
+				</a>
+			</div>
 		</div>
-		
-		
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> 
-		<script src="js/script.js"></script>
-	</body>
-</html>
+	
