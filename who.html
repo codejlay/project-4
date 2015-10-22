@@ -13,7 +13,9 @@
 			<div class="who">
 				<h1>Who are you?</h1>
 			
-				<form novalidate name="myForm" ng-submit="expression" ng-class="{ 'show-validation': showValidation }">
+				<!-- <form novalidate name="myForm" ng-submit="expression" ng-class="{ 'show-validation': showValidation }"> -->
+
+				<form name="myForm" ng-class="{'show-validation': showValidation }" class="loginForm" ng-submit="enter($event)" novalidate>
 					<div class="form-list">
 						<input type="text" name="name" id="name" placeholder="Name" ng-model="user.first" ng-minlength="2" ng-maxlength="140" required/> </br>
 
@@ -27,18 +29,22 @@
 						  <option value="battery">Battery technician</option>
 						  <option value="yoga">Yoga teacher</option>
 						</select>
+					
 					</div>
+					<button class="checkinbutton" ng-click="enter($event, myForm)">Check In</button>
 				</form>
 			</div>
 				
-			<div class="check-in-button">
-				<a href="recent.html"><input type="submit" id="submit" value="Check in" ng-disabled="myForm.$invalid"/></a>
-			</div>	
+			
+				
+			<!-- <div class="check-in-button">
+				<a href="recent.html"><input type="submit" id="submit" value="Check in"</a>
+			</div>	 -->
 		</div>
 		
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
 		<script src="js/script.js"></script>
 	</body>
 </html>

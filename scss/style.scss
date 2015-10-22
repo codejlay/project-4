@@ -4,328 +4,358 @@
 // @import"mixin";
 
 
-html {	
-	margin: 0 auto;
-	font-family: raleway;
-	font-size: 18px;
+html {  
+    margin: 0 auto;
+    font-family: raleway;
+    font-size: 18px;
 }
 
 h1 {
 
-	font-size: 2rem;
-	font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 h2 {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .main-red {
-	
+
 }
 
 .wrapper-main{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	// justify-content: center;
-	// box-align: center;
-	justify-content: space-around;
-	// align-content: flex-start;
-	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    // box-align: center;
+    justify-content: space-around;
+    // align-content: flex-start;
+    height: 100vh;
 
 }
 
 
 body {
-	background-color: #ED4343;
+    background-color: #ED4343;
 }
 
 
 
 
 .welcome {
-	text-transform: uppercase;
-	color: white;
+    text-transform: uppercase;
+    color: white;
 
 }
 
 .button {
-	width: 75px;
-	height: 75px;
-	border: solid 3px white;
-	border-radius: 50%;
-	border-image: white;
-	background: white;
-	animation: border-pulse 3s infinite ease-in-out;
+    width: 75px;
+    height: 75px;
+    border: solid 3px white;
+    border-radius: 50%;
+    border-image: white;
+    background: white;
+    animation: border-pulse 3s infinite ease-in-out;
 
-@keyframes border-pulse {
-  0%   { 
-	box-shadow:
-		0 0 0 1rem rgba(255, 255, 255, 0.1),
-		0 0 0 2rem rgba(255, 255, 255, 0.15),
-		0 0 0 3rem rgba(255, 255, 255, 0.2);
-  }
-  50%  {       
+    @keyframes border-pulse {
+      0%   { 
+        box-shadow:
+        0 0 0 1rem rgba(255, 255, 255, 0.1),
+        0 0 0 2rem rgba(255, 255, 255, 0.15),
+        0 0 0 3rem rgba(255, 255, 255, 0.2);
+    }
+    50%  {       
 
-	box-shadow:
-		0 0 0 1.25rem rgba(255, 255, 255, 0.1),
-		0 0 0 2.75rem rgba(255, 255, 255, 0.1),
-		0 0 0 4rem rgba(255, 255, 255, 0);
+        box-shadow:
+        0 0 0 1.25rem rgba(255, 255, 255, 0.1),
+        0 0 0 2.75rem rgba(255, 255, 255, 0.1),
+        0 0 0 4rem rgba(255, 255, 255, 0);
 
-	}
- 75%  {       
+    }
+    75%  {       
 
-	box-shadow:
-		0 0 0 1.50rem rgba(255, 255, 255, 0.1),
-		0 0 0 3rem rgba(255, 255, 255, 0),
-		0 0 0 5rem rgba(255, 255, 255, 0);
+        box-shadow:
+        0 0 0 1.50rem rgba(255, 255, 255, 0.1),
+        0 0 0 3rem rgba(255, 255, 255, 0),
+        0 0 0 5rem rgba(255, 255, 255, 0);
 
-	}
-  100% { 
+    }
+    100% { 
 
-	box-shadow:
-		0 0 0 1.75rem rgba(255, 255, 255, 0),
-		0 0 0 3.75rem rgba(255, 255, 255, 0),
-		0 0 0 6rem rgba(255, 255, 255, 0);
+        box-shadow:
+        0 0 0 1.75rem rgba(255, 255, 255, 0),
+        0 0 0 3.75rem rgba(255, 255, 255, 0),
+        0 0 0 6rem rgba(255, 255, 255, 0);
 
-   }
+    }
 }
 
 }
 
 
 .check-in {
-	color: white;
+    color: white;
 }
 
 // page 2 - Who are you?
 
 body.who {
-	background-color: black;
-	margin: 0 5%;
+    background-color: black;
+    margin: 0 5%;
 }
 
 .wrapper-main-who {
-	background-color: black;
-	display: flex;
-	flex-direction: column;
-	// flex-align: center;
-	// align-items: center;
-	height: 100vh;
-	justify-content: space-around;
-	line-height: 3.5;
-	// padding: 2rem 2rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    // flex-align: center;
+    // align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+    line-height: 3.5;
+    // padding: 2rem 2rem;
 }
 
 .who {
-	color: white;
+    color: white;
 
-	h1 {
-	text-align: center;
-	}
+    h1 {
+        text-align: center;
+    }
 
-	align-items: bottom;
+    align-items: bottom;
 }
 
 
 .form-list {
-	// color: #ED4343;
-	
+    // color: #ED4343;
 
-	#name {
-		// color: #ED4343;
-	}
 
-	select  {
-	
-	appearance: none;
-	width: 102.5%;
-	color: #ED4343;
-	height: 2rem;
-	border: none;
-	font-size: 1rem;
-	padding: 0 1rem;
-	
-	}
-	
-	input {
-		width: 100%;
-		height: 2rem;
-		border: none;
-		font-size: 1rem;
-		padding: 0 0 0 1rem;
-		
+    #name {
+        // color: #ED4343;
+    }
 
-	}
+
+    select  {
+
+        appearance: none;
+        width: 102.5%;
+        color: #ED4343;
+        height: 2rem;
+        border: none;
+        font-size: 1rem;
+        padding: 0 1rem;
+
+    }
+    
+    input {
+        width: 100%;
+        height: 2rem;
+        border: none;
+        font-size: 1rem;
+        padding: 0 0 0 1rem;
+    }
 }
+
+.show-validation {
+    transition: 0.5s linear all;
+}
+
+
+@keyframes show-validation {
+    0%   {
+        box-shadow:
+        0 0 0 0.2rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.4rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.5rem rgba(237, 67, 67, 0.1);
+    }
+    50%  {               
+        box-shadow:
+        0 0 0 0.5rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.7rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.8rem rgba(237, 67, 67, 0.1);   
+    }
+    75%  {          
+        box-shadow:
+        0 0 0 0.3rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.5rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.9rem rgba(237, 67, 67, 0.1);    
+    }
+    100% {         box-shadow:
+        0 0 0 0.6rem rgba(237, 67, 67, 0.1),
+        0 0 0 0.8rem rgba(237, 67, 67, 0.1),
+        0 0 0 1rem rgba(237, 67, 67, 0.1);   
+    }
+}
+
+
+.show-validation {
+    input, select, textarea {
+        &.ng-invalid {
+            border-radius: 0;
+            animation: show-validation 0.5s infinite ease-in-out;
+
+        }
+    }
+}
+
 
 *::-webkit-input-placeholder {
-		color: #ED4343;	
-		}
-
-#name{
-
-}
-
-
-#age{
-
-}
-
-
-#occupation{
-	
+    color: #ED4343; 
 }
 
 
 .check-in-button {
-	input {
-		width: 100%;
-		height: 50px;
-		color: white;
-		background-color: #ED4343;
-		border: none;
-		font-size: 1rem;
-	}
+    input {
+        width: 100%;
+        height: 50px;
+        color: white;
+        background-color: #ED4343;
+        border: none;
+        font-size: 1rem;
+    }
 }
 
 
 // page 3 - Recent Encounters
 
 body.recent-all {
-	background-color: white;
+    background-color: white;
 
 }
 
 .wrapper-main-recent {
-	background-color: white;
-	// box-flex: 1;
-	// height: 100vh;
-	// display: flex;
-	// flex-direction: column;
-	// height: 100vh;
-	// justify-content: space-around;
+    background-color: white;
+    // box-flex: 1;
+    // height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    // height: 100vh;
+    // justify-content: space-around;
 }
 
 
 .recent {
-	padding: 2rem 1rem;
-	text-align: center;
+    padding: 2rem 1rem;
+    text-align: center;
 
-	p {
-		font-weight: bold;
-	}
+    p {
+        font-weight: bold;
+    }
 }
 
 
 .encounter-list {
-
+    margin: 0 5%;
 }
 
 
 .report-section {
-	background-color: black;
-	// height: 10rem;
-	padding: 2rem 1rem;
-	display: flex;
-	flex-direction: column;
-	flex:.5;
-	// height: 100vh;
-	// width: 100%;
-	// justify-content: space-around;
-	// align-items: center;
-	// align-content: flex-start;
-	// align-self: stretch;
-	button {
-		border: none;
-		background-color: #ED4343;
-		color: white;
-		width: 100%;
-		// height: 2rem;
-		padding: 1rem 1rem;
+    background-color: black;
+    // height: 10rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    // flex:.5;
+    height: 25vh;
+    // width: 100%;
+    justify-content: space-around;
+    // align-items: center;
+    // align-content: flex-start;
+    // align-self: stretch;
+    button {
+        border: none;
+        background-color: #ED4343;
+        color: white;
+        width: 100%;
+        // height: 2rem;
+        padding: 1rem 1rem;
 
 
-	}
+    }
 }
 
 
 // page 4 - Report Encounter
 
 body.report-all {
-	background-color: black;
-	margin: 0 5%;
+    background-color: black;
+    margin: 0 5%;
 }
 
 .wrapper-main-report {
-	
-	display: flex;
-	flex-direction: column;
-	// align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
 
 }
 
 
 .report {
-	color: white;
-	text-align: center;
-	padding: 1rem 2rem;
-	font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: bold;
 }
 
 
 .report-list  {
-	line-height: 5;
-	select {
-	appearance: none;
-	width: 100%;
-	color: #ED4343;
-	font-size: 1rem;
-	padding: .5rem 1rem;
-	}
+    line-height: 5;
+    select {
+        appearance: none;
+        width: 100%;
+        color: #ED4343;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        border: none;
+    }
 }
 
 
 #alien-type  {
-	
+
 }
 
 
 .text-area {
-	textarea {
-	width: 94.5%;
-	// height: 23vh;
-	color: #ED4343;
-	font-size: 1rem;
-	padding: .5rem 1rem;
-	}
+    textarea {
+        width: 94.5%;
+    // height: 23vh;
+    color: #ED4343;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    border: none;
+}
 }
 
 
 .submit-button {
-	button {
-		width: 100%;
-		color: white;
-		background-color: #ED4343;
-		border: none;
-		padding: 1rem 2rem;
-		font-size: 1rem;
-		margin: 12% 0;
-	}
+    button {
+        width: 100%;
+        color: white;
+        background-color: #ED4343;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        margin: 12% 0;
+    }
 }
 
 
 //validation flash animation
 
-// .show-validation {
-// 	transition: 0.5s linear all;
-// }
+.show-validation {
+    transition: 0.5s linear all;
+}
 
-// .show-validation {
-// 	input, select, textarea {
-// 		&.ng-invalid {
-// 			border-radius: 0;
-// 			animation: invalid-input 0.5s infinite;
-// 		}
-// 	}
-// }
+.show-validation {
+    input, select, textarea {
+        &.ng-invalid {
+            border-radius: 0;
+            animation: invalid-input 0.5s infinite;
+        }
+    }
+}

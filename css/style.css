@@ -156,6 +156,34 @@ body.who {
   font-size: 1rem;
   padding: 0 0 0 1rem; }
 
+.show-validation {
+  transition: 0.5s linear all; }
+
+@-webkit-keyframes show-validation {
+  0% {
+    box-shadow: 0 0 0 0.2rem rgba(237, 67, 67, 0.1), 0 0 0 0.4rem rgba(237, 67, 67, 0.1), 0 0 0 0.5rem rgba(237, 67, 67, 0.1); }
+  50% {
+    box-shadow: 0 0 0 0.5rem rgba(237, 67, 67, 0.1), 0 0 0 0.7rem rgba(237, 67, 67, 0.1), 0 0 0 0.8rem rgba(237, 67, 67, 0.1); }
+  75% {
+    box-shadow: 0 0 0 0.3rem rgba(237, 67, 67, 0.1), 0 0 0 0.5rem rgba(237, 67, 67, 0.1), 0 0 0 0.9rem rgba(237, 67, 67, 0.1); }
+  100% {
+    box-shadow: 0 0 0 0.6rem rgba(237, 67, 67, 0.1), 0 0 0 0.8rem rgba(237, 67, 67, 0.1), 0 0 0 1rem rgba(237, 67, 67, 0.1); } }
+
+@keyframes show-validation {
+  0% {
+    box-shadow: 0 0 0 0.2rem rgba(237, 67, 67, 0.1), 0 0 0 0.4rem rgba(237, 67, 67, 0.1), 0 0 0 0.5rem rgba(237, 67, 67, 0.1); }
+  50% {
+    box-shadow: 0 0 0 0.5rem rgba(237, 67, 67, 0.1), 0 0 0 0.7rem rgba(237, 67, 67, 0.1), 0 0 0 0.8rem rgba(237, 67, 67, 0.1); }
+  75% {
+    box-shadow: 0 0 0 0.3rem rgba(237, 67, 67, 0.1), 0 0 0 0.5rem rgba(237, 67, 67, 0.1), 0 0 0 0.9rem rgba(237, 67, 67, 0.1); }
+  100% {
+    box-shadow: 0 0 0 0.6rem rgba(237, 67, 67, 0.1), 0 0 0 0.8rem rgba(237, 67, 67, 0.1), 0 0 0 1rem rgba(237, 67, 67, 0.1); } }
+
+.show-validation input.ng-invalid, .show-validation select.ng-invalid, .show-validation textarea.ng-invalid {
+  border-radius: 0;
+  -webkit-animation: show-validation 0.5s infinite ease-in-out;
+  animation: show-validation 0.5s infinite ease-in-out; }
+
 *::-webkit-input-placeholder {
   color: #ED4343; }
 
@@ -179,6 +207,9 @@ body.recent-all {
   .recent p {
     font-weight: bold; }
 
+.encounter-list {
+  margin: 0 5%; }
+
 .report-section {
   background-color: black;
   padding: 2rem 1rem;
@@ -188,9 +219,10 @@ body.recent-all {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: .5;
-  -ms-flex: .5;
-  flex: .5; }
+  height: 25vh;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
   .report-section button {
     border: none;
     background-color: #ED4343;
@@ -225,13 +257,15 @@ body.report-all {
     width: 100%;
     color: #ED4343;
     font-size: 1rem;
-    padding: 0.5rem 1rem; }
+    padding: 0.5rem 1rem;
+    border: none; }
 
 .text-area textarea {
   width: 94.5%;
   color: #ED4343;
   font-size: 1rem;
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 1rem;
+  border: none; }
 
 .submit-button button {
   width: 100%;
@@ -241,3 +275,11 @@ body.report-all {
   padding: 1rem 2rem;
   font-size: 1rem;
   margin: 12% 0; }
+
+.show-validation {
+  transition: 0.5s linear all; }
+
+.show-validation input.ng-invalid, .show-validation select.ng-invalid, .show-validation textarea.ng-invalid {
+  border-radius: 0;
+  -webkit-animation: invalid-input 0.5s infinite;
+  animation: invalid-input 0.5s infinite; }
