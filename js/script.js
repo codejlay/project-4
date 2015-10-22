@@ -31,7 +31,8 @@ angular.module('myApp', ['ui.router'])
                 })
                 .state('reports', {
                     url:'/reports',
-                    templateUrl: 'report.html'
+                    templateUrl: 'report.html',
+                    controller: 'ReportFormCtrl'
                 })
 
                 // .state('page3', {
@@ -47,27 +48,37 @@ angular.module('myApp', ['ui.router'])
   // .run(['$rootScope', function($rootScope){
 
   // }])
-  .controller('RegisterFormCtrl', ['$scope', '$state', function($scope, $state){
+  .controller('RegisterFormCtrl', ['$scope', '$state', function($scope, $state) {
 
   $scope.showValidation = false;
 
-    $scope.enter = function(e) {
-      e.preventDefault(); 
-
-     if ($scope.myForm.$invalid) {
+  $scope.submitRegistration = function(e, form) {
+        e.preventDefault();
+        console.log(form);
+  
+  if ($scope.myForm.$invalid) {
       $scope.showValidation = true;
     } else {
-
       $state.go('encounters');
+      }
     }
+}]) 
 
-      // $scope.submitRegistration = function(e, form) {
-      //   e.preventDefault();
-      //   console.log(form);
-        
-    }// }
+  .controller('ReportFormCtrl', ['$scope', '$state', function($scope, $state) {
 
-  }]) 
+  $scope.showValidation = false;
+
+  $scope.submitReport = function(e, form) {
+        e.preventDefault();
+        console.log(form);
+  
+  if ($scope.myReportForm.$invalid) {
+      $scope.showValidation = true;
+    } else {
+      alert('Your report has been filed');
+      }
+    }
+}]) 
 
     // .controller('ReportFormCtrl', ['$scope', function($scope) {
 

@@ -4,6 +4,8 @@
 // @import"mixin";
 
 
+// page 1 - Home
+
 html {  
     margin: 0 auto;
     font-family: raleway;
@@ -164,42 +166,55 @@ body.who {
 }
 
 
-@keyframes show-validation {
-    0%   {
-        box-shadow:
-        0 0 0 0.2rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.4rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.5rem rgba(237, 67, 67, 0.1);
-    }
-    50%  {               
-        box-shadow:
-        0 0 0 0.5rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.7rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.8rem rgba(237, 67, 67, 0.1);   
-    }
-    75%  {          
-        box-shadow:
-        0 0 0 0.3rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.5rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.9rem rgba(237, 67, 67, 0.1);    
-    }
-    100% {         box-shadow:
-        0 0 0 0.6rem rgba(237, 67, 67, 0.1),
-        0 0 0 0.8rem rgba(237, 67, 67, 0.1),
-        0 0 0 1rem rgba(237, 67, 67, 0.1);   
-    }
-}
+// @keyframes show-validation {
+//     0%   {
+//         box-shadow:
+//         0 0 0 0.2rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.4rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.5rem rgba(237, 67, 67, 0.1);
+//     }
+//     50%  {               
+//         box-shadow:
+//         0 0 0 0.5rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.7rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.8rem rgba(237, 67, 67, 0.1);   
+//     }
+//     75%  {          
+//         box-shadow:
+//         0 0 0 0.3rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.5rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.9rem rgba(237, 67, 67, 0.1);    
+//     }
+//     100% {         box-shadow:
+//         0 0 0 0.6rem rgba(237, 67, 67, 0.1),
+//         0 0 0 0.8rem rgba(237, 67, 67, 0.1),
+//         0 0 0 1rem rgba(237, 67, 67, 0.1);   
+//     }
+// }
 
+
+// .show-validation {
+//     input, select, textarea {
+//         &.ng-invalid {
+//             border-radius: 0;
+//             animation: show-validation 0.5s infinite ease-in-out;
+
+//         }
+//     }
+// }
 
 .show-validation {
     input, select, textarea {
         &.ng-invalid {
-            border-radius: 0;
-            animation: show-validation 0.5s infinite ease-in-out;
-
+            border: 5px solid maroon;
         }
     }
 }
+
+
+
+
+
 
 
 *::-webkit-input-placeholder {

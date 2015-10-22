@@ -1,6 +1,6 @@
 
 	<div class="report-all">
-		<form novalidate name="myreportForm" ng-submit="expression">
+		<form name="myReportForm" action="" ng-class="{'show-validation': showValidation }" class="reportForm" ng-submit="submit()" novalidate>
 			<div class="wrapper-main-report">
 				<div class="report">
 					<h1>Report Encounter</h1>
@@ -23,7 +23,7 @@
 				</div>
 				
 				<div class="submit-button">
-					<button>Submit Report</button>
+					<input class="reportbutton" value="Submit Report" type="submit" ng-click="submitReport($event, myReportForm)"/>
 				</div>	
 			</div>
 		</form>
