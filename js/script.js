@@ -1,113 +1,103 @@
 (function(){
 
-angular.module('myApp', ['ui.router']) 
-
-.config(['$stateProvider', 
-          '$urlRouterProvider',
-          '$locationProvider',
-          function($stateProvider, 
-                    $urlRouterProvider,
-                    $locationProvider){
-
-            $locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false,
-                rewriteLinks: false
-            });
-
-            $stateProvider
-                .state('welcome', {
-                    url:'/',
-                    templateUrl: 'start.html'
-                })
-                .state('register', {
-                    url:'/register',
-                    templateUrl: 'who.html',
-                    controller: 'RegisterFormCtrl'
-                })
-                .state('encounters', {
-                    url:'/encounters',
-                    templateUrl: 'recent.html',
-                })
-                .state('reports', {
-                    url:'/reports',
-                    templateUrl: 'report.html',
-                    controller: 'ReportFormCtrl'
-                })
-
-                // .state('page3', {
-                //     url:'/page3',
-                //     templateUrl: 'recent.html'
-                // }).state('page4', {
-                //     url:'/g',
-                //     templateUrl: 'report.html'
-                // })
+  angular.module('myApp',['ui.router', 'ngCookies']) 
+  // angular.module('myApp', [require('angular-animate')]);
 
 
-}])
-  // .run(['$rootScope', function($rootScope){
+  .config(['$stateProvider', 
+    '$urlRouterProvider',
+    '$locationProvider',
+    function($stateProvider, 
+      $urlRouterProvider,
+      $locationProvider){
 
-  // }])
-  .controller('RegisterFormCtrl', ['$scope', '$state', function($scope, $state) {
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false,
+        rewriteLinks: false
+      });
 
-  $scope.showValidation = false;
+      $stateProvider
+      .state('welcome', {
+        url:'/',
+        templateUrl: 'start.html',
+        controller: ['$cookies', function($cookies){
+            $cookies.putObject('mars_user', undefined);
+        }],
+      })
+      .state('register', {
+        url:'/register',
+        templateUrl: 'who.html',
+        controller: 'RegisterFormCtrl',
+        resolve:{
+          user: ['$cookies', function($cookies){
+            if($cookies.getObject('mars_user')) {
+                $state.go('encounters');
+            }
+          }]
+        }
+      })
+      .state('encounters', {
+        url:'/encounters',
+        templateUrl: 'recent.html',
+      })
+      .state('reports', {
+        url:'/reports',
+        templateUrl: 'report.html',
+        controller: 'ReportFormCtrl'
+      })
 
-  $scope.submitRegistration = function(e, form) {
-        e.preventDefault();
-        console.log(form);
+    }])
   
-  if ($scope.myForm.$invalid) {
-      $scope.showValidation = true;
-    } else {
-      $state.go('encounters');
+  .controller('RegisterFormCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies) {
+
+    var API_URL_GET_JOBS = "https://red-wdp-api.herokuapp.com/api/mars/jobs";
+    var API_URL_CREATE_COLONIST = "https://red-wdp-api.herokuapp.com/api/mars/colonists"; 
+
+    $scope.colonists = {};
+
+    $http.get(API_URL_GET_JOBS).then(function(response){
+      $scope.jobs = response.data.jobs;
+    })
+    $scope.showValidation = false;
+    $scope.submitRegistration = function(e, form) {
+      e.preventDefault();
+      console.log(form);
+
+      if ($scope.myForm.$invalid) {
+        $scope.showValidation = true;
+      } else {
+
+        $http({
+          method: 'POST',
+          url: API_URL_CREATE_COLONIST,
+          data: { colonist: $scope.colonist }
+        }).then(function(response){
+          
+          $cookies.putObject('mars_user', response.data.colonist);
+          $state.go('encounters');
+       })
       }
     }
-}]) 
+  }])
+
+
 
   .controller('ReportFormCtrl', ['$scope', '$state', function($scope, $state) {
 
-  $scope.showValidation = false;
+    $scope.showValidation = false;
 
-  $scope.submitReport = function(e, form) {
-        e.preventDefault();
-        console.log(form);
-  
-  if ($scope.myReportForm.$invalid) {
-      $scope.showValidation = true;
-    } else {
-      alert('Your report has been filed');
+    $scope.submitReport = function(e, form) {
+      e.preventDefault();
+      console.log(form);
+
+      if ($scope.myReportForm.$invalid) {
+        $scope.showValidation = true;
+      } else {
+        alert('Your report has been filed');
       }
     }
-}]) 
+  }]) 
 
-    // .controller('ReportFormCtrl', ['$scope', function($scope) {
+})();
 
-    //   $scope.submitReport = function(e, form) {
-    //     e.preventDefault();
-    //     console.log(form);
-
-
-
-    //   }
-
-     //  $scope.enter = function(e, myForm) {
-     //  e.preventDefault(); 
-
-     // if ($scope.myForm.$invalid) {
-     //  $scope.showValidation = true;
-
-     //  }
-
-
-// }]);
-
-   //  $scope.enter = function(e) {
-   //    e.preventDefault(); 
-
-   //   if ($scope.myForm.$invalid) {
-   //    $scope.showValidation = true;
-
-   //    }
-
-   // } 
- })();
