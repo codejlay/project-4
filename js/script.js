@@ -1,8 +1,13 @@
 (function(){
 
-  angular.module('myApp',['ui.router', 'ngCookies']) 
+  angular.module('myApp',['ui.router', 'ngCookies', 'ngAnimate']) 
   // angular.module('myApp', [require('angular-animate')]);
 
+  .run(function($rootScope){
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+  $rootScope.stateName = toState.name;
+  })
+    })
 
   .config(['$stateProvider', 
     '$urlRouterProvider',
@@ -24,6 +29,7 @@
         controller: ['$cookies', function($cookies){
             $cookies.putObject('mars_user', undefined);
         }],
+          controllerAs: 'welcome'
       })
       .state('register', {
         url:'/register',
@@ -40,6 +46,7 @@
       .state('encounters', {
         url:'/encounters',
         templateUrl: 'recent.html',
+        controller: 'encountersCtrl',
       })
       .state('reports', {
         url:'/reports',
@@ -80,6 +87,15 @@
       }
     }
   }])
+
+  .controller('encountersCtrl', [ '$scope','$http', function($scope, $http){
+  var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
+    $http.get(ENCOUNTERS_API_URL).then(function(response){
+      $scope.jobs=response.data.encounters;
+      debugger;
+    })
+
+}])
 
 
 
