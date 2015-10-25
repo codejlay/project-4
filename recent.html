@@ -5,23 +5,23 @@
 		<p>See an Alien? Report it!</p>
 	</div>
 
-	<div class="encounter-list" ng-model="encounters.date" ng-repeat="encounter in encounters">
-		<ul ng-repeat="encounter in encounters">
+	<div class="encounter-list" ng-model="encounter.date">
+		<ul value="{{ encounter.date }}" ng-repeat="encounter in encounters"> {{ encounter.atype }} 
 		</ul>
-		<!-- <p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> </br>
-		<p>Tuesday, Oct 20 - Lizard</p> 
-		<p>Smoked it</p> -->
+			<!-- <p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> </br>
+			<p>Tuesday, Oct 20 - Lizard</p> 
+			<p>Smoked it</p> -->
 	</div>
 	
 	<div class="report-section">

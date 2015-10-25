@@ -1,13 +1,12 @@
 (function(){
 
   angular.module('myApp',['ui.router', 'ngCookies', 'ngAnimate']) 
-  // angular.module('myApp', [require('angular-animate')]);
-
+  
   .run(function($rootScope){
-  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-  $rootScope.stateName = toState.name;
-  })
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+      $rootScope.stateName = toState.name;
     })
+  })
 
   .config(['$stateProvider', 
     '$urlRouterProvider',
@@ -27,9 +26,9 @@
         url:'/',
         templateUrl: 'start.html',
         controller: ['$cookies', function($cookies){
-            $cookies.putObject('mars_user', undefined);
+          $cookies.putObject('mars_user', undefined);
         }],
-          controllerAs: 'welcome'
+        controllerAs: 'welcome'
       })
       .state('register', {
         url:'/register',
@@ -38,7 +37,7 @@
         resolve:{
           user: ['$cookies', function($cookies){
             if($cookies.getObject('mars_user')) {
-                $state.go('encounters');
+              $state.go('encounters');
             }
           }]
         }
@@ -55,65 +54,66 @@
       })
 
     }])
-  
-  .controller('RegisterFormCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies) {
 
-    var API_URL_GET_JOBS = "https://red-wdp-api.herokuapp.com/api/mars/jobs";
-    var API_URL_CREATE_COLONIST = "https://red-wdp-api.herokuapp.com/api/mars/colonists"; 
+.controller('RegisterFormCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies) {
 
-    $scope.colonists = {};
+  var API_URL_GET_JOBS = "https://red-wdp-api.herokuapp.com/api/mars/jobs";
+  var API_URL_CREATE_COLONIST = "https://red-wdp-api.herokuapp.com/api/mars/colonists"; 
 
-    $http.get(API_URL_GET_JOBS).then(function(response){
-      $scope.jobs = response.data.jobs;
-    })
-    $scope.showValidation = false;
-    $scope.submitRegistration = function(e, form) {
-      e.preventDefault();
-      console.log(form);
+  $scope.colonists = {};
 
-      if ($scope.myForm.$invalid) {
-        $scope.showValidation = true;
-      } else {
+  $http.get(API_URL_GET_JOBS).then(function(response){
+    $scope.jobs = response.data.jobs;
+  })
 
-        $http({
-          method: 'POST',
-          url: API_URL_CREATE_COLONIST,
-          data: { colonist: $scope.colonist }
-        }).then(function(response){
-          
-          $cookies.putObject('mars_user', response.data.colonist);
-          $state.go('encounters');
-       })
-      }
+  $scope.showValidation = false;
+  $scope.submitRegistration = function(e, form) {
+    e.preventDefault();
+    console.log(form);
+
+    if ($scope.myForm.$invalid) {
+      $scope.showValidation = true;
+    } else {
+
+      $http({
+        method: 'POST',
+        url: API_URL_CREATE_COLONIST,
+        data: { colonist: $scope.colonist }
+      }).then(function(response){
+        
+        $cookies.putObject('mars_user', response.data.colonist);
+        $state.go('encounters');
+      })
     }
-  }])
+  }
+}])
 
-  .controller('encountersCtrl', [ '$scope','$http', function($scope, $http){
+
+.controller('encountersCtrl', [ '$scope','$http', function($scope, $http){
   var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
-    $http.get(ENCOUNTERS_API_URL).then(function(response){
-      $scope.jobs=response.data.encounters;
-      debugger;
+  $http.get(ENCOUNTERS_API_URL).then(function(response){
+    $scope.jobs=response.data.encounters;
+      // debugger;
     })
 
 }])
 
 
+.controller('ReportFormCtrl', ['$scope', '$state', function($scope, $state) {
 
-  .controller('ReportFormCtrl', ['$scope', '$state', function($scope, $state) {
+  $scope.showValidation = false;
 
-    $scope.showValidation = false;
+  $scope.submitReport = function(e, form) {
+    e.preventDefault();
+    console.log(form);
 
-    $scope.submitReport = function(e, form) {
-      e.preventDefault();
-      console.log(form);
-
-      if ($scope.myReportForm.$invalid) {
-        $scope.showValidation = true;
-      } else {
-        alert('Your report has been filed');
-      }
+    if ($scope.myReportForm.$invalid) {
+      $scope.showValidation = true;
+    } else {
+      alert('Your report has been filed');
     }
-  }]) 
+  }
+}]) 
 
 })();
 
