@@ -13,7 +13,6 @@
 					<option value="" disabled="disabled" selected="selected">Select occupation</option>
 					<option value="{{ job.id }}" ng-repeat="job in jobs">{{ job.name }}</option>
 				</select>
-
 			</div>
 			<input class="checkinbutton" value="Check in" type="submit" ng-click="submitRegistration($event, myForm)"/>
 		</form>

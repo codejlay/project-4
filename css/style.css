@@ -84,7 +84,7 @@ to prevent collapsing during animation*/
   transform: translate3d(0, 0, 0); }
 
 .encounters [ui-view].ng-enter-active {
-  -opacity: 1;
+  opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
@@ -294,7 +294,13 @@ h2 {
     font-weight: bold; }
 
 .encounter-list {
-  margin: 0 5%; }
+  margin: 0 5%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .report-section {
   background-color: black;
