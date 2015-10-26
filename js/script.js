@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('myApp',['ui.router', 'ngCookies', 'ngAnimate']) 
+  angular.module('myApp',['ui.router', 'ngCookies', 'ngAnimate', 'ngTouch']) 
   
   .run(function($rootScope){
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
@@ -25,7 +25,10 @@
       .state('welcome', {
         url:'/',
         templateUrl: 'start.html',
-        controller: ['$cookies', function($cookies){
+        controller: ['$cookies', '$state', '$scope', function($cookies, $state, $scope){
+          $scope.swipeLeft = function() {
+            $state.go('register');
+          }
           $cookies.putObject('mars_user', undefined);
         }],
         controllerAs: 'welcome'
