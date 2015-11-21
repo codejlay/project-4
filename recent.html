@@ -1,13 +1,15 @@
 
-<div class="wrapper-main-recent">
+<section class="wrapper-main-recent">
 	<div class="recent">
 		<h1>Recent Encounters</h1>
 		<p>See an Alien? Report it!</p>
 	</div>
 
-	<div class="encounter-list"  ng-repeat="encounter in encounters" >
-		<p>{{ encounter.date| date:'EEEE, MMM dd' }} - {{ encounter.atype }} </br> {{ encounter.action }}</p> 
-			
+	<div class="encounter-list">
+		<div class="encounter-list-item"  ng-repeat="encounter in encounters" >
+			<p>{{ encounter.date| date:'EEEE, MMM dd' }} - {{ encounter.atype }}</p>
+			<p>{{ encounter.action }}</p> 
+		</div>
 	</div>
 	
 	<div class="report-section">
@@ -15,4 +17,4 @@
 			<button>Report Encounter</button>
 		</a>
 	</div>
-</div>
+</section>

@@ -4,11 +4,14 @@
   "description": "Mars Colony Hybrid App",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-sass": "^2.0.4"
+    "angular":"^1.4.7",
+    "angular-animate": "^1.4.7"
   },
   "devDependencies": {
-    "connect-history-api-fallback": "^1.1.0"
+    "browser-sync": "^2.10.0",
+    "connect-history-api-fallback": "^1.1.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +20,9 @@
     "type": "git",
     "url": "git+https://github.com/codejlay/project-4.git"
   },
+  "keywords": [
+    "Angular"
+  ],
   "author": "JLay",
   "license": "ISC",
   "bugs": {

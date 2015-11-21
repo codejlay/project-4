@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'); // Load Gulp!
+var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var historyApiFallback = require('connect-history-api-fallback');
 var sass = require('gulp-sass');
@@ -16,8 +16,6 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('./css'));
 });
 
-
-
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -26,8 +24,6 @@ gulp.task('browser-sync', function() {
         }
     });
 
-
     gulp.watch('./scss/**/*.scss', ['scss']);
     gulp.watch(["index.html", "js/*.js", "css/*.css"]).on('change', browserSync.reload);
 });
-

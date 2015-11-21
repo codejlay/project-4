@@ -1,0 +1,20 @@
+// Global
+
+* {
+    box-sizing: border-box;
+}
+
+
+html  {  
+    margin: 0 auto;
+    font-family: $font-stack;
+    font-size: $font-base;
+}
+
+
+.page {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}

@@ -1,6 +1,5 @@
-
-<div class="report-all">
-	<form name="myReportForm" action="" ng-class="{'show-validation': showValidation }" class="reportForm" ng-submit="submit()" novalidate>
+<section class="report-all">
+	<form name="myReportForm" action="" ng-class="{'show-validation': showValidation }" class="reportForm" ng-submit="enter($event)" novalidate>
 		<div class="wrapper-main-report">
 			<div class="report">
 				<h1>Report Encounter</h1>
@@ -8,23 +7,19 @@
 			</div>
 
 			<div class="report-list">
-				<select name="alien-type" id="alien-type" ng-model="data.singleSelect" required>
-					<option value="" disabled="disabled" selected="selected">Select alien type</option>
-					<option value="lizard">Lizard Man</option>
-					<option value="slug">Giant Slug</option>
-					<option value="android">Rogue Android</option>
-					<option value="octospider">Octospider</option>
-					<option value="spiderpus">Spiderpus</option>
+				<select name="alien-type" id="alien-type" ng-model="report.atype" ng-class="{placeholder: !alien.type}" required>
+					<option value="" class="placeholder">Select alien type</option>
+                    <option value="{{alien.type}}" ng-repeat="alien in aliens "> {{alien.type}} </option>
 				</select>
 				
 				<div class="text-area">
-					<textarea name="textarea" rows="10" cols="50" ng-model="action" placeholder="Action taken" required>Action taken</textarea>
+					<textarea name="textarea" rows="10" cols="50" ng-model="report.action" placeholder="Action taken" required>Action taken</textarea>
 				</div>		
 			</div>
 
 			<div class="submit-button">
-				<input class="reportbutton" value="Submit Report" type="submit" ng-click="submitReport($event, myReportForm)"/>
+				<input class="reportbutton" value="Submit Report" type="submit" ng-click="submitReport($event,myReportForm)"/>
 			</div>	
 		</div>
 	</form>
-</div>
+</section>

@@ -1,13 +1,11 @@
 // Navigation animation
 
-/* Have to set height explicity on ui-view 
-to prevent collapsing during animation*/
-
 .ui-view-container {
     position:absolute; 
     width:100vw;
     height:100vh;
 }
+
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -18,6 +16,7 @@ to prevent collapsing during animation*/
     -o-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
 }
+
 
 [ui-view].ng-enter {
     .welcome & {
@@ -44,6 +43,7 @@ to prevent collapsing during animation*/
         transform:translate3d(-200px, 0, 0);
     }
 }
+
 
 [ui-view].ng-enter-active {
     .welcome & {
@@ -72,6 +72,7 @@ to prevent collapsing during animation*/
     }
 }
 
+
 [ui-view].ng-leave {
     .welcome & {
         opacity: 1; 
@@ -99,6 +100,7 @@ to prevent collapsing during animation*/
     }
  
 }
+
 
 [ui-view].ng-leave-active {
     .welcome & {

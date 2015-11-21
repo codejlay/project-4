@@ -1,4 +1,4 @@
-(function(){
+(function() {
 
   angular.module('myApp',['ui.router', 'ngCookies', 'ngAnimate', 'ngTouch']) 
   
@@ -33,6 +33,7 @@
         }],
         controllerAs: 'welcome'
       })
+
       .state('register', {
         url:'/register',
         templateUrl: 'who.html',
@@ -45,18 +46,22 @@
           }]
         }
       })
+
       .state('encounters', {
         url:'/encounters',
         templateUrl: 'recent.html',
         controller: 'encountersCtrl',
       })
+
       .state('reports', {
         url:'/reports',
         templateUrl: 'report.html',
         controller: 'ReportFormCtrl'
       })
-
     }])
+
+
+// Registration Control
 
 .controller('RegisterFormCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies) {
 
@@ -72,7 +77,6 @@
   $scope.showValidation = false;
   $scope.submitRegistration = function(e, form) {
     e.preventDefault();
-    console.log(form);
 
     if ($scope.myForm.$invalid) {
       $scope.showValidation = true;
@@ -92,13 +96,14 @@
 }])
 
 
+
+// Encounter Control
+
 .controller('encountersCtrl', [ '$scope','$http', function($scope, $http){
   var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
   $http.get(ENCOUNTERS_API_URL).then(function(response){
     $scope.encounters=response.data.encounters;
-      // debugger;
     })
-
 }])
 
 
@@ -108,7 +113,6 @@
 
   $scope.submitReport = function(e, form) {
     e.preventDefault();
-    console.log(form);
 
     if ($scope.myReportForm.$invalid) {
       $scope.showValidation = true;
@@ -118,5 +122,37 @@
   }
 }]) 
 
-})();
 
+// Report Control
+
+.controller('ReportFormCtrl', ['$scope','$http', '$cookies', '$state', function($scope, $http, $cookies, $state) {
+var ALIEN_TYPE_API_URL = "https://red-wdp-api.herokuapp.com/api/mars/aliens";
+var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
+
+    $scope.report ={};
+    $scope.showValidation = false;
+    $http.get(ALIEN_TYPE_API_URL).then(function(response){
+        $scope.aliens = response.data.aliens;
+    });
+
+    $scope.report.date = '2015-11-20';
+    $scope.report.colonist_id = $cookies.getObject('mars_user').id;
+
+    $scope.enter = function (e, form){
+        e.preventDefault();
+        if ($scope.myReportForm.$invalid){
+            $scope.showValidation=true;
+        }else{
+
+            $http({
+                method: 'POST',
+                url: ENCOUNTERS_API_URL,
+                data: {encounter: $scope.report}
+            }).then(function(response){
+
+              alert("Thank you for your report! Mars is even safer now!");
+            })
+          }
+        }
+    }])
+})();
