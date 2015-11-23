@@ -86,17 +86,17 @@
 
 
 .show-validation {
-  transition: 0.5s linear all;
+    transition: 0.5s linear all;
 }
 
 
 .show-validation {
-  input, select, textarea {
-    &.ng-invalid {
-      border-radius: 0;
-      animation: invalid-input 0.5s infinite;
+    input, select, textarea {
+        &.ng-invalid {
+          border-radius: 0;
+          animation: invalid-input 0.5s infinite;
+        }
     }
-  }
 }
 
 

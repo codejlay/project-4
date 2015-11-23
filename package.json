@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codejlay/project-4.git"
+    "url": "git+https://github.com/codejlay/project04-mars-colony.git" 
   },
   "keywords": [
     "Angular"
@@ -26,7 +26,7 @@
   "author": "JLay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codejlay/project-4/issues"
+    "url": "https://github.com/codejlay/project04-mars-colony/issues"
   },
-  "homepage": "https://github.com/codejlay/project-4#readme"
+  "homepage": "https://github.com/codejlay/project04-mars-colony#readme"
 }

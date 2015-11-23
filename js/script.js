@@ -125,7 +125,7 @@
 
 // Report Control
 
-.controller('ReportFormCtrl', ['$scope','$http', '$cookies', '$state', function($scope, $http, $cookies, $state) {
+.controller('ReportFormCtrl', ['$scope','$http', '$cookies', '$state', '$filter', function($scope, $http, $cookies, $state, $filter) {
 var ALIEN_TYPE_API_URL = "https://red-wdp-api.herokuapp.com/api/mars/aliens";
 var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
 
@@ -135,7 +135,7 @@ var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters'
         $scope.aliens = response.data.aliens;
     });
 
-    $scope.report.date = '2015-11-20';
+    $scope.report.date =  $filter('date')(new Date(), 'yyyy-MM-dd');
     $scope.report.colonist_id = $cookies.getObject('mars_user').id;
 
     $scope.enter = function (e, form){
