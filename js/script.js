@@ -16,14 +16,14 @@
       $locationProvider){
 
       $locationProvider.html5Mode({
-        enabled: true,
+        enabled: false,
         requireBase: false,
         rewriteLinks: false
       });
 
       $stateProvider
       .state('welcome', {
-        url:'/',
+        url:'',
         templateUrl: 'start.html',
         controller: ['$cookies', '$state', '$scope', function($cookies, $state, $scope){
           $scope.swipeLeft = function() {
