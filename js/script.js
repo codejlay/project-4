@@ -96,7 +96,6 @@
 }])
 
 
-
 // Encounter Control
 
 .controller('encountersCtrl', [ '$scope','$http', function($scope, $http){
