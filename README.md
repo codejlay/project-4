@@ -5,12 +5,11 @@
 A web-based app for Earth colonists exploring Mars using AngularJS.
 
 1. Implement basic ajax GET and POST requests using Angular’s $http service to:
-- Save a new colonists information
-- Save a new alien encounter
-- Fetch a list of recent encounters
-- Determine if a colonist has already registered
-- Create a new encounter
-
+  - Save a new colonists information
+  - Save a new alien encounter
+  - Fetch a list of recent encounters
+  - Determine if a colonist has already registered
+  - Create a new encounter
 2. Use Angular modules to easily implement swipe-left and swipe-right navigation as well as animated page transitions. 
 
 
