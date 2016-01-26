@@ -1,5 +1,7 @@
 # Project 4 - Mars Colony Hybrid App
 
+View deployed site through [GitHub Pages.](http://codejlay.github.io/project04-mars-colony)
+
 **Summary:**
 
 A web-based app for Earth colonists exploring Mars using AngularJS.
